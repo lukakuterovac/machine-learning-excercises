@@ -1,9 +1,9 @@
-import pandas as pd
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
 from matplotlib.colors import ListedColormap
-from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
+from sklearn.model_selection import train_test_split
 
 labels = {0: "Adelie", 1: "Chinstrap", 2: "Gentoo"}
 
@@ -42,7 +42,7 @@ def plot_decision_regions(X, y, classifier, resolution=0.02):
 
 
 # ucitaj podatke
-df = pd.read_csv("penguins.csv")
+df = pd.read_csv("exercises-05\penguins.csv")
 
 # izostale vrijednosti po stupcima
 print(df.isnull().sum())
@@ -82,9 +82,9 @@ print("Presječna točka: ", logreg.intercept_)
 plot_decision_regions(X_test, y_test, logreg)
 
 from sklearn.metrics import (
-    confusion_matrix,
     ConfusionMatrixDisplay,
     classification_report,
+    confusion_matrix,
 )
 
 y_test_p = logreg.predict(X_test)

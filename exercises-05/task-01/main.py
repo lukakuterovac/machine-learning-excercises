@@ -1,10 +1,8 @@
-import numpy as np
 import matplotlib
 import matplotlib.pyplot as plt
-
+import numpy as np
 from sklearn.datasets import make_classification
 from sklearn.model_selection import train_test_split
-
 
 X, y = make_classification(
     n_samples=200,
@@ -20,8 +18,8 @@ X, y = make_classification(
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=5)
 
 plt.figure()
-plt.scatter(x=X_train[:, 0], y=X_train[:, 1], c=y_train, cmap="coolwarm")
-plt.scatter(x=X_test[:, 0], y=X_test[:, 1], c=y_test, cmap="coolwarm", marker="x")
+plt.scatter(x=X_train[:, 0], y=X_train[:, 1], c=y_train)
+plt.scatter(x=X_test[:, 0], y=X_test[:, 1], c=y_test, marker="x")
 plt.show()
 
 from sklearn.linear_model import LogisticRegression
@@ -42,9 +40,9 @@ plt.scatter(x=X_train[:, 0], y=X_train[:, 1], c=y_train, cmap="coolwarm")
 plt.show()
 
 from sklearn.metrics import (
-    confusion_matrix,
     ConfusionMatrixDisplay,
     accuracy_score,
+    confusion_matrix,
     precision_score,
     recall_score,
 )
